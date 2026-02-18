@@ -8,6 +8,9 @@ class LinearRegression(BaseEstimator):
     self.intercept_: float = None
 
   def fit(self, X: list, y: list):
+    if X is None or y is None:
+      raise ValueError("X and y cannot be None")
+      
     pass
 
   def predict(self, X: list[float]) -> list[float]:
