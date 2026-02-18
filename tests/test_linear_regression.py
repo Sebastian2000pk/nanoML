@@ -18,6 +18,11 @@ class TestLinearRegression:
     assert model.coef_ is not None
     assert model.intercept_ is not None
 
+  def test_invalid_fit_shape(self):
+    model = LinearRegression()
+    with pytest.raises(ValueError):
+      model.fit(np.array([[1], [2], [3]]), np.array([1, 2])), "Expected ValueError for mismatched shapes"
+
   def test_predict_output_shape(self):
     X, y = simple_linear_data
     model = LinearRegression()
