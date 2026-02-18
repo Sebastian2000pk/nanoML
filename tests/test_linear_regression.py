@@ -23,7 +23,7 @@ class TestLinearRegression:
     model = LinearRegression()
     model.fit(X, y)
     predictions = model.predict(X)
-    assert predictions.shape == y.shape
+    assert predictions.shape == y.shape, f"Expected shape {y.shape}, but got {predictions.shape}"
 
   def test_fit_with_invalid_data(self):
     model = LinearRegression()

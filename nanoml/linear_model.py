@@ -12,4 +12,4 @@ class LinearRegression(BaseEstimator):
 
   def predict(self, X: list[float]) -> list[float]:
     Y = self.b0 + self.b1*X
-    return Y.tolist()
+    return Y.flatten()
